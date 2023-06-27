@@ -24,7 +24,7 @@ const Homepage = () => {
   return (
     <>
     {load? <Spinner mt="30px" size={"xl"}/>:""}
-    <Grid templateColumns={"repeat(4,200px)"} w="60vw">
+    <Grid templateColumns={"repeat(4,1fr)"} w="90vw" m="auto" mt="20px">
        {allBooks.length>0 && allBooks.map((e)=> <BookCard key={e._id} data={e}/>)}
     </Grid>
     </>

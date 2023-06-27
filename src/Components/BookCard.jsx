@@ -10,7 +10,7 @@ const BookCard = ({data}) => {
       <Image src={image} h="80%" w="100%" />
       <Text>{title}</Text>
       <Text>{category}</Text>
-      <Link to='/:id'><Button>Details</Button></Link>
+      <Link to='/:id'><Button bgColor={"tomato"} color="white">Details</Button></Link>
      </Box>
     </>
   )
