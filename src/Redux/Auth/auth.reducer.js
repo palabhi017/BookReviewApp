@@ -3,8 +3,8 @@ import * as types from "./auth.types"
 let initialState={
     isLaoding:false,
     isError:false,
-    isAuth: false,
-    userData: {},
+    isAuth: localStorage.getItem("userId")? true:false,
+    userData: JSON.parse(localStorage.getItem("userId"))||{},
     
 }
 

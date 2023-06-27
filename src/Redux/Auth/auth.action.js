@@ -10,8 +10,8 @@ export const authSuccess = (payload)=> async(dispatch)=>{
     let userDetails = await handleSignup(payload)
     if(userDetails.user){
       dispatch({type:types.AUTH_SUCCESS,payload:userDetails.user})
+      localStorage.setItem("userId",JSON.stringify(userDetails.user))
     }
-    
   } catch (error) {
      dispatch({type:types.AUTH_ERROR})
   }   

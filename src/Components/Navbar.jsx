@@ -28,7 +28,7 @@ const Navbar = () => {
   const [searchInput, setSearchInput] = useState("");
   const dispatch = useDispatch();
   const name = useSelector((state) => state.authReducer.userData.name);
- 
+ console.log(name)
   const login = useSelector((state) => state.authReducer.isAuth);
   const [searchData, setSearchData] = useState([]);
 
@@ -73,10 +73,10 @@ const Navbar = () => {
                 {login? <Avatars name={name} /> : <Authbuttons />}
               </Flex>
             </Menu>
-        <VStack>
+        <Link to='/library'><VStack>
           <Icon as={BiLibrary} color={"white"} boxSize={7}></Icon>
           <Text display={{base:"none",md:"none",lg:"block"}} color="white">Library</Text>
-        </VStack>
+        </VStack></Link>
       </HStack>
     </HStack>
     </>

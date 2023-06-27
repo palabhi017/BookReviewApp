@@ -15,7 +15,7 @@ import { AUTH_LOGOUT } from "../Redux/Auth/auth.types";
 const Avatars = ({ name }) => {
   const dispatch = useDispatch();
   const handlelogout = () => {
-    localStorage.removeItem("user")
+    localStorage.removeItem("userId")
     dispatch({ type: AUTH_LOGOUT });
   };
 
@@ -32,8 +32,8 @@ const Avatars = ({ name }) => {
           
         </Button></Link>
 
-        <Link to="/order"><Button mt="5px" w="80%" h="45px">
-          My Orders
+        <Link to="/userbooks"><Button mt="5px" w="80%" h="45px">
+          My Books
         </Button></Link>
       </MenuList>
     </>
