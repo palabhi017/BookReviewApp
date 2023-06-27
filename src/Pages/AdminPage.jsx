@@ -91,7 +91,7 @@ const handleUpdate=(title,image,category,id)=>{
   return (
     <>
     <HStack w='100vw' h="auto" alignItems={"top"}>
-        <VStack w="30%" maxH={"50vh"}>
+        <VStack w="30%" maxH={"70vh"}>
             <Heading>ADD NEW BOOK</Heading>
            <Text>Title</Text>
            <Input type='text' placeholder='Enter Title' onChange={(e)=> setTitle(e.target.value)}></Input>
@@ -100,6 +100,7 @@ const handleUpdate=(title,image,category,id)=>{
            <Text>Category</Text>
            <Input type='text' placeholder='Enter Category' onChange={(e)=> setCategory(e.target.value)}></Input>
            <Button bgColor={"blue.400"} color={"white"} onClick={addUsersBooks}>Add Book</Button>
+           <Link to='/logs'><Button>GO TO LOGS</Button></Link>
         </VStack>
         <Grid templateColumns={"repeat(3,1fr)"} w="70%" m="auto" mt="20px" gap='10px'>
     {allBooks.length>0 && allBooks.map((e) => {

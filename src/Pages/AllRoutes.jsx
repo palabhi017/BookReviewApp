@@ -9,6 +9,7 @@ import PrivateRoute from '../Components/PrivateRoute'
 import SingleBookPage from './SingleBookPage'
 import UsersBooks from './UsersBooks'
 import AdminPage from './AdminPage'
+import Logs from './Logs'
 
 const AllRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const AllRoutes = () => {
         <Route path='/adminlogin' element={<AdminLoginPage/>}/>
         <Route path='/userbooks' element={<UsersBooks/>}/>
         <Route path='/adminpage' element={<AdminPage/>}/>
+        <Route path='/logs' element={<Logs/>}/>
     </Routes>
   )
 }
