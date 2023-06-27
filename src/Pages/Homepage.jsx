@@ -7,7 +7,7 @@ const Homepage = () => {
   const [allBooks,setAllBooks] = useState([])
   const getAllBooks= async()=>{
       try {
-        let res = await axios.get(`http://localhost:8080/book/`)
+        let res = await axios.get(`https://gifted-fox-sneakers.cyclic.app/book/`)
          setAllBooks(res.data)
       } catch (error) {
         console.log(error)

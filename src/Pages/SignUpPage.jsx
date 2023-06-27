@@ -27,7 +27,7 @@ import { useNavigate } from 'react-router-dom';
 const toast = useToast()
     const handleSignup= async()=>{
         try {
-            let res = await axios.post(`http://localhost:8080/user/ragister`,{name,email,password})
+            let res = await axios.post(`https://gifted-fox-sneakers.cyclic.app/user/ragister`,{name,email,password})
             if(res.data){
                 toast({
                     title: 'Account created.',
