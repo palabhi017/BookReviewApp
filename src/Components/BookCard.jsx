@@ -44,7 +44,7 @@ const BookCard = ({data}) => {
       <Text>{title}</Text>
       <Text>{category}</Text>
       <HStack justifyContent={"space-between"}>
-      <Button bgColor={"blue.400"} color="white" onClick={addToLibrary}>Add to library</Button>
+      <Button bgColor={"blue.400"} color="white" onClick={addToLibrary} isDisabled={!isAuth}>Add to library</Button>
       <Link to={`/${_id}`}><Button bgColor={"tomato"} color="white">Details</Button></Link>
       </HStack>
       
