@@ -13,7 +13,9 @@ const BookCard = ({data}) => {
     const addToLibrary= async()=>{
         if(isAuth){
             try {
-                let res = await axios.post(`https://gifted-fox-sneakers.cyclic.app/library/add`,{image,title,category,userId})
+                let res = await axios.post(`https://gifted-fox-sneakers.cyclic.app/library/add`,{image,title,category,userId},{
+                  headers:{ Authorization: `Bearer ${localStorage.getItem("token")}`}
+                })
                 toast({
                     title: 'Book added',
                     position:"top",

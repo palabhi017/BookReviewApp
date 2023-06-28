@@ -16,6 +16,7 @@ const Avatars = ({ name }) => {
   const dispatch = useDispatch();
   const handlelogout = () => {
     localStorage.removeItem("userId")
+    localStorage.removeItem("token")
     dispatch({ type: AUTH_LOGOUT });
   };
 

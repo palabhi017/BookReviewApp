@@ -53,7 +53,9 @@ const toast = useToast()
       const postReviews= async()=>{
         setLoad(true)
             try {
-              let res = await axios.post(`https://gifted-fox-sneakers.cyclic.app/review/add`,{bookId:id,userName,review})
+               await axios.post(`https://gifted-fox-sneakers.cyclic.app/review/add`,{bookId:id,userName,review},{
+                headers:{ Authorization: `Bearer ${localStorage.getItem("token")}`}
+              })
               toast({
                 title: 'Review Posted.',
                 position:"top",
@@ -72,7 +74,9 @@ const toast = useToast()
         const postRating= async(e)=>{
           setLoad(true)
               try {
-                let res = await axios.post(`https://gifted-fox-sneakers.cyclic.app/rating/add`,{bookId:id,userName,rating:e.target.value})
+                 await axios.post(`https://gifted-fox-sneakers.cyclic.app/rating/add`,{bookId:id,userName,rating:e.target.value},{
+                  headers:{ Authorization: `Bearer ${localStorage.getItem("token")}`}
+                })
                 toast({
                   title: 'Rating Posted.',
                   position:"top",
