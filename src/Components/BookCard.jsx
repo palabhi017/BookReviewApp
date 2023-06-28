@@ -4,7 +4,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const BookCard = ({data}) => {
+const BookCard = ({data,toggle,getFunc}) => {
     const {image,title,_id,category} = data;
     const toast = useToast()
  const userId = useSelector((state) => state.authReducer.userData.id)
@@ -39,6 +39,15 @@ const BookCard = ({data}) => {
         }
       
     }
+
+    const removeToLibrary= async()=>{
+      try {
+        let res = await axios.delete(`https://gifted-fox-sneakers.cyclic.app/library/delete/${_id}`)
+        getFunc()
+      } catch (error) {
+        console.log(error)
+      }
+    }
   return (
     <>
      <Box h="auto" w="300px">
@@ -46,7 +55,8 @@ const BookCard = ({data}) => {
       <Text>{title}</Text>
       <Text>{category}</Text>
       <HStack justifyContent={"space-between"}>
-      <Button bgColor={"blue.400"} color="white" onClick={addToLibrary} isDisabled={!isAuth}>Add to library</Button>
+      {toggle? <Button bgColor={"red.400"} color="white" onClick={removeToLibrary} >Remove</Button> : <Button bgColor={"blue.400"} color="white" onClick={addToLibrary} isDisabled={!isAuth}>Add to library</Button>}
+      
       <Link to={`/${_id}`}><Button bgColor={"tomato"} color="white">Details</Button></Link>
       </HStack>
       
